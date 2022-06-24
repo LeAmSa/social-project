@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=Sriracha&display=swap');
+
+        * {margin: 0;}
+
+        body {
+            background-color: rgb(28, 28, 43);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 96vh;
+        }
+
+        #clock {
+            font-family: 'Roboto', sans-serif;
+            font-size: 3em;
+            color: white;
+            font-weight: 100;
+        }
+
+        #textDate {
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            font-weight: 100;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="clock"></div>
+        <p id="textDate"></p>
+    </div>
+    <script>
+        const getTime = () => {
+            const dayName = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"]
+            const monthName = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"]
+            const divClock = document.getElementById('clock')
+            const pDate = document.getElementById('textDate')
+            const date = new Date()
+            const dayOfWeek = date.getDay()
+            const dayOfMonth = date.getDate()
+            const month = date.getMonth()
+            const hours = date.getHours() 
+            const minutes = date.getMinutes() 
+            const seconds = date.getSeconds()
+            const hour = hours < 10 ? `0${hours}` : hours
+            const minute = minutes < 10 ? `0${minutes}` : minutes
+            const second = seconds < 10 ? `0${seconds}` : seconds
+            divClock.innerHTML = `${hour}:${minute}`
+            pDate.innerHTML = `${dayName[dayOfWeek]}, ${dayOfMonth} ${monthName[month]}`
+        }
+
+        setInterval(() => {
+            getTime()
+        }, 1000)
+    </script>
+</body>
+</html>
