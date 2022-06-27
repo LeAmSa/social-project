@@ -13,7 +13,7 @@ body {
 
 section#container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     height: 99vh;
 }
@@ -21,11 +21,12 @@ section#container {
 #mockupBox {
     display: flex;
     margin: 100px;
-    width: 400px;
-    height: 550px;
-    background-color: rgba(255, 255, 255, 0.137);
+    min-width: 300px;
+    min-height: 550px;
+    /*background-color: rgba(255, 255, 255, 0.137);*/
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
     border-radius: 20px;
 }
 
@@ -39,7 +40,7 @@ iframe {
     position: relative;
     height: 480px;
     width: 230px;
-    background-color: white;
+    background-color: rgb(28, 28, 43);
     border-radius: 15px;
 
 }
@@ -47,8 +48,8 @@ iframe {
 #btnBox {
     display: flex;
     background-color: rgba(177, 172, 172, 0.445);
-    width: 80px;
-    height: 450px;
+    min-width: 70px;
+    height: 380px;
     border-radius: 20px 0px 0px 20px;
     flex-direction: column;
     justify-content: center;
@@ -57,7 +58,7 @@ iframe {
 }
 
 .img-btn {
-    width: 60px;
+    width: 50px;
     border-radius: 50%;
     box-shadow: 1px 2px 4px black;
 }
